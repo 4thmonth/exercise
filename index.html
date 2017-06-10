@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="ctrl">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+		<meta name="format-detection" content="telephone=no email=no"/>
+		
+		<link rel="stylesheet"href="dist/css/swiper.min.css">
+			<link rel="stylesheet"href="css/index.css">
+		
+		
+	</head>
+	<body ng-controller="test">
+
+			
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+				        <div class="swiper-slide"ng-repeat="i in a">
+				        	<img src="{{i.img}}">
+				        </div>
+				      
+				</div>
+				
+				<div class="swiper-pagination"></div>
+			</div>
+			
+	
+		
+
+       
+        
+  
+
+
+	
+
+	
+	
+	
+    	
+
+	 <script src="angular.min.js"></script>
+    <script src="dist/js/swiper.min.js"></script>
+			
+ {{fun()}}
+    
+			
+			
+			
+			
+			
+		
+		<script>
+		            
+        
+			
+			
+			
+			
+			
+			
+			var app=angular.module("ctrl",[])
+             app.controller("test",function($scope,$http){
+	          $http.get("data.json").success(function(data)
+	          {
+	          	$scope.a=data.yi
+	          	
+	            })
+	          $scope.fun=function()
+	          	{
+	              var swiper=new Swiper(".swiper-container",{
+    	                 // 循环轮播
+				         loop:true,
+				        // 自动轮播
+				     autoplay:2000,
+				      pagination:".swiper-pagination" 
+	              })
+	          	}
+	          	
+              
+             })
+             
+             
+          
+            
+             
+              
+         
+	
+</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
+
